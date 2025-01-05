@@ -1,0 +1,165 @@
+/* LEARNINGS : */
+
+/*MARGIN :
+vw : viewport-width
+vh : viewport-height
+ */
+
+/*CSS VARIABLES :
+The var() function is used to insert the value of a CSS variable.
+
+CSS variables have access to the DOM, which means that you can create variables with local or global scope, 
+change the variables with JavaScript, and change the variables based on media queries.
+
+A good way to use CSS variables is when it comes to the colors of your design. 
+Instead of copy and paste the same colors over and over again, you can place them in variables.
+
+
+
+
+Syntax of the var() Function
+The var() function is used to insert the value of a CSS variable.
+
+The syntax of the var() function is as follows:
+
+var(--name, value)
+Value	Description
+name	Required. The variable name (must start with two dashes)
+value	Optional. The fallback value (used if the variable is not found)
+
+Note: The variable name must begin with two dashes (--) and it is case sensitive!
+
+How var() Works
+First of all: CSS variables can have a global or local scope.
+
+Global variables can be accessed/used through the entire document, 
+while local variables can be used only inside the selector where it is declared.
+
+To create a variable with global scope, declare it inside the :root selector. 
+The :root selector matches the document's root element.
+
+To create a variable with local scope, declare it inside the selector that is going to use it.
+
+Advantages of using var() are:
+makes the code easier to read (more understandable)
+makes it much easier to change the color values
+
+First, we declare two global variables (--blue and --white). 
+Then, we use the var() function to insert the value of the variables later in the style sheet:
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+body { background-color: var(--blue); }
+
+h2 { border-bottom: 2px solid var(--blue); }
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+
+ */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root{
+    --main-bg-color : pink;
+    --font1-heading : "DM Serif Text", serif;
+    --font1-heading-weight : 400;
+    --font2-subheading : "PT Serif", serif;
+    --font3-content : "Playfair Display", serif;
+}
+ 
+.max-width-1{
+    max-width: 65vw;
+}
+
+.max-width-2{
+    max-width: 50vw;
+}
+
+.m-auto{
+    margin : auto;
+    /* THIS CLASS WILL CENTER THE ELEMEN WHEREVER IT IS APPLIED TOO */
+}
+
+.form-input{
+    margin : 0px 15px;
+    padding: 3px 5px;
+    font-size : 15px;
+    border : none;
+    outline:none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    /* background-image: url('magnifying-glass-solid.svg'); https://www.w3schools.com/cssref/css3_pr_background-size.php*! */
+    background-repeat: no-repeat;
+    /*!*background repeats stops image from repeating itself. otherwise less the size of image, it repeats itself that much to fill the space*!*/
+    background-size: 35px;
+    background-position: left center;
+    font-family: var(--font2-subheading);
+    text-align: center;
+    
+
+}
+
+.form-btn{
+    border: none;
+    box-sizing: border-box;
+    /* Padding and Element Width and Box-sizing : 
+The CSS width property specifies the width of the element's content area. 
+The content area is the portion inside the padding, border, and margin of an element (the box model).
+
+So, if an element has a specified width, the padding added to that element will be added to the total width of the element. 
+This is often an undesirable result.
+
+Example
+Here, the <div> element is given a width of 300px. 
+However, the actual width of the <div> element will be 350px (300px + 25px of left padding + 25px of right padding):
+
+div {
+  width: 300px;
+  padding: 25px;
+}
+
+
+
+
+
+
+<----->IMP<----->
+To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its actual width; if you increase the padding, the available content space will decrease.
+
+Example
+Use the box-sizing property to keep the width at 300px, no matter the amount of padding:
+
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+    */
+    background-color: #4B4A67;
+    color: white;
+    padding : 10px 10px;
+    margin-bottom : 10px;
+    align-items: center;
+    cursor: pointer;
+    font-family : var(--font2-subheading);
+    text-align : center;
+    font-size : 15px;
+}

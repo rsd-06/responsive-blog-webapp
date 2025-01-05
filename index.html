@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/utils.css"> 
+    <!-- utils css need to be loaded first before style stylesheet, because utils contains basic styles of the page overall. -->
+    <link rel="stylesheet" href="css/style.css"> 
     <title>TodayBlog - Blog In & Out</title>
 </head>
 <body>
-    <nav class="navigation">
+    <div class="container">
 
-    </nav>
-    <div class="content">
+        <nav class="navigation max-width-1 m-auto">
+            <div class="nav-left">
+                <span>TodayBlog</span>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <input class="form-input" type="text" placeholder="Article Search">
+                <input class="form-btn" type="button" value="Search">
+            </div>
+        </nav>
+
+        <div class="content max-width-2 m-auto">
+    
+        </div>
+        <div class="footer max-width-1 m-auto">
+    
+        </div>
 
     </div>
-    <div class="footer">
-
-    </div>
+   
 
 
 

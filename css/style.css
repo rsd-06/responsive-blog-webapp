@@ -1,0 +1,242 @@
+/* LEARNINGS */
+
+/* 1. MARGIN PROPERTY : https://www.w3schools.com/css/css_margin.asp
+
+Margin - Individual Sides
+CSS has properties for specifying the margin for each side of an element:
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+All the margin properties can have the following values:
+
+auto - the browser calculates the margin
+length - specifies a margin in px, pt, cm, etc.
+% - specifies a margin in % of the width of the containing element
+inherit - specifies that the margin should be inherited from the parent element
+Tip: Negative values are allowed.
+
+Margin - Shorthand Property
+
+If the margin property has four values:
+
+margin: 25px 50px 75px 100px;
+top margin is 25px
+right margin is 50px
+bottom margin is 75px
+left margin is 100px
+
+If the margin property has three values:
+
+margin: 25px 50px 75px;
+top margin is 25px
+right and left margins are 50px
+bottom margin is 75px
+
+If the margin property has two values:
+
+margin: 25px 50px;
+top and bottom margins are 25px
+right and left margins are 50px
+
+If the margin property has one value:
+
+margin: 25px;
+all four margins are 25px */
+
+/* /*CSS VARIABLES :
+
+The var() function is used to insert the value of a CSS variable.
+
+CSS variables have access to the DOM, which means that you can create variables with local or global scope, 
+change the variables with JavaScript, and change the variables based on media queries.
+
+A good way to use CSS variables is when it comes to the colors of your design. 
+Instead of copy and paste the same colors over and over again, you can place them in variables.
+
+
+
+
+Syntax of the var() Function
+The var() function is used to insert the value of a CSS variable.
+
+The syntax of the var() function is as follows:
+
+var(--name, value)
+Value	Description
+name	Required. The variable name (must start with two dashes)
+value	Optional. The fallback value (used if the variable is not found)
+
+Note: The variable name must begin with two dashes (--) and it is case sensitive!
+
+How var() Works
+First of all: CSS variables can have a global or local scope.
+
+Global variables can be accessed/used through the entire document, 
+while local variables can be used only inside the selector where it is declared.
+
+To create a variable with global scope, declare it inside the :root selector. 
+The :root selector matches the document's root element.
+
+To create a variable with local scope, declare it inside the selector that is going to use it.
+
+Advantages of using var() are:
+makes the code easier to read (more understandable)
+makes it much easier to change the color values
+
+First, we declare two global variables (--blue and --white). 
+Then, we use the var() function to insert the value of the variables later in the style sheet:
+
+:root {
+  --blue: #1e90ff;
+  --white: #ffffff;
+}
+
+body { background-color: var(--blue); }
+
+h2 { border-bottom: 2px solid var(--blue); }
+
+.container {
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 15px;
+}
+
+button {
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px;
+}
+  
+*/
+
+/* FLEXBOX : ( learn it )
+Making display : flex of any element, MAKES THE ITEMS INSIDE THAT ELEMENT TO GET BESIDE EACH OTHER .
+always makes the content inside the element we have set display to flex, side by side.
+*/
+
+/* PADDING :
+Padding is used to create space around an element's content, inside of any defined borders.
+
+The CSS padding properties are used to generate space around an element's content, inside of any defined borders.
+
+With CSS, you have full control over the padding. 
+There are properties for setting the padding for each side of an element (top, right, bottom, and left).
+
+Padding - Individual Sides
+CSS has properties for specifying the padding for each side of an element:
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+All the padding properties can have the following values:
+
+length - specifies a padding in px, pt, cm, etc.
+% - specifies a padding in % of the width of the containing element
+inherit - specifies that the padding should be inherited from the parent element
+Note: Negative values are not allowed.
+
+Padding - Shorthand Property - SAME AS WIDTH
+
+Padding and Element Width
+The CSS width property specifies the width of the element's content area. 
+The content area is the portion inside the padding, border, and margin of an element (the box model).
+
+So, if an element has a specified width, the padding added to that element will be added to the total width of the element. 
+This is often an undesirable result.
+
+Example
+Here, the <div> element is given a width of 300px. 
+However, the actual width of the <div> element will be 350px (300px + 25px of left padding + 25px of right padding):
+
+div {
+  width: 300px;
+  padding: 25px;
+}
+
+
+
+
+
+
+<----->IMP<----->
+To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property. This causes the element to maintain its actual width; if you increase the padding, the available content space will decrease.
+
+Example
+Use the box-sizing property to keep the width at 300px, no matter the amount of padding:
+
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+*/
+
+*{
+    margin : 0;
+    padding : 0;
+}
+
+.container{
+    margin : 0;
+    padding : 0;
+}
+
+.navigation {
+    font-family: var(--font1-heading);
+    font-weight: var(--font1-heading-weight);
+    height : 75px;
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left{
+    font-size: 40px;
+    display: flex;
+    /* WILL MAKE THE CONTENT INSIDE nav-left BESIDE EACH OTHER RATHER THAN BEING BELOW EACH OTHER.
+    i.e will make the span and ul beside each other !
+     */
+}
+
+.nav-left ul{
+    display: flex;
+    /* WILL MAKE THE LIST ITEMS INSIDE UL, BESIDE EACH OTHER, RATHER THAN BEING BELOW EACH OTHER. */
+    align-items: center;
+    margin: 0 50px;
+    /* THIS GIVES THE MARGIN TO WHOLE OF UL I.E THE ENDS OF UL  */
+    font-size: 20px;
+}
+
+.nav-left ul li{
+    list-style: none;
+    margin : 0 14px;
+    /* upper and down margin of li elements are 0 and right left of each li element is 14px. */
+    font-family: var(--font2x-subheading);
+}
+
+.nav-left ul li a{
+    text-decoration: none ;
+    color : black;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center;
+    font-size : 40px
+}
+
+.content {
+    height : 100px;
+    background-color: beige;
+}
+
+.footer {
+    height : 50px;
+    background-color: blueviolet;
+}
